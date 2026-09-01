@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#5b21b6">
+    <meta name="description" content="Sistem Inventaris Ruangan">
+
+    <title>Inventaris Ruangan</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" href="icons/icon-192.png">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">📦</div>
+
+       <div>
+    <h2>Inventaris</h2>
+    <h2>Wulan & Vika</h2>
+    <small>Sistem Inventaris Ruangan</small>
+</div>
+    </div>
+
+    <nav>
+        <button class="nav-btn active" onclick="showPage('dashboard')">
+            🏠 <span>Beranda</span>
+        </button>
+
+        <button class="nav-btn" onclick="showPage('form')">
+            ➕ <span>Tambah Inventaris</span>
+        </button>
+
+        <button class="nav-btn" onclick="showPage('inventory')">
+            📋 <span>Daftar Inventaris</span>
+        </button>
+
+        <button class="nav-btn" onclick="showPage('backup')">
+            💾 <span>Backup & Restore</span>
+        </button>
+
+        <button class="nav-btn" onclick="exportData()">
+            📄 <span>Laporan / Export</span>
+        </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <label class="dark-toggle">
+            🌙
+            <input type="checkbox" id="darkMode">
+            <span class="toggle"></span>
+        </label>
+
+        <p>@ Inventaris Vika & Wulan</p>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+<main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+        <h2>Inventaris Ruangan</h2>
+
+        <div class="top-actions">
+
+            <select id="roomHeader" onchange="filterRoom()">
+                <option value="">Semua Ruangan</option>
+            </select>
+
+            <button class="notification">🔔</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page active-page">
+
+        <div class="welcome">
+            <div>
+                <h1>Selamat datang! 👋</h1>
+                <p>Berikut ringkasan inventaris ruangan Anda.</p>
+            </div>
+
+            <button class="primary-btn" onclick="showPage('form')">
+                + Tambah Barang
+            </button>
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="stats">
+
+            <div class="stat-card total">
+                <div class="stat-icon">📦</div>
+
+                <div>
+                    <span>Total Barang</span>
+                    <strong id="totalBarang">0</strong>
+                    <small>Semua barang terdaftar</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card good">
+                <div class="stat-icon">✓</div>
+
+                <div>
+                    <span>Barang Baik</span>
+                    <strong id="barangBaik">0</strong>
+                    <small>Dalam kondisi baik</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card ringan">
+                <div class="stat-icon">!</div>
+
+                <div>
+                    <span>Rusak Ringan</span>
+                    <strong id="rusakRingan">0</strong>
+                    <small>Perlu perbaikan ringan</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card berat">
+                <div class="stat-icon">×</div>
+
+                <div>
+                    <span>Rusak Berat</span>
+                    <strong id="rusakBerat">0</strong>
+                    <small>Perlu perbaikan berat</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RECENT INVENTORY -->
+        <div class="section-card">
+
+            <div class="section-header">
+                <div>
+                    <h2>📋 Inventaris Terbaru</h2>
+                    <p>Data barang yang tersimpan</p>
+                </div>
+
+                <button class="link-btn" onclick="showPage('inventory')">
+                    Lihat Semua →
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Nama Barang</th>
+                            <th>Kode Inventaris</th>
+                            <th>Ruangan</th>
+                            <th>Jumlah</th>
+                            <th>Kondisi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="dashboardTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORM -->
+    <section id="form" class="page">
+
+        <div class="page-title">
+            <div>
+                <h1 id="formTitle">Tambah Inventaris</h1>
+                <p>Tambahkan data barang baru.</p>
+            </div>
+
+            <button class="secondary-btn" onclick="showPage('inventory')">
+                ← Kembali
+            </button>
+        </div>
+
+
+        <div class="form-card">
+
+            <form id="inventoryForm">
+
+                <input type="hidden" id="editId">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Nama Barang</label>
+                        <input
+                            type="text"
+                            id="namaBarang"
+                            placeholder="Contoh: Komputer Desktop"
+                            required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Kode Inventaris</label>
+                        <input
+                            type="text"
+                            id="kodeInventaris"
+                            placeholder="Contoh: INV-001"
+                            required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Nama Ruangan</label>
+
+                        <select id="namaRuangan" required>
+                            <option value="">Pilih Ruangan</option>
+                            <option>Lab Komputer</option>
+                            <option>Ruang Kelas</option>
+                            <option>Perpustakaan</option>
+                            <option>Ruang Guru</option>
+                            <option>Ruang TU</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Jumlah Barang</label>
+
+                        <input
+                            type="number"
+                            id="jumlahBarang"
+                            min="1"
+                            placeholder="Contoh: 5"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Kondisi Barang</label>
+
+                    <div class="condition-options">
+
+                        <label class="condition good-option">
+                            <input
+                                type="radio"
+                                name="kondisi"
+                                value="Baik"
+                                required>
+                            <span>✓</span>
+                            <div>
+                                <strong>Baik</strong>
+                                <small>Kondisi normal</small>
+                            </div>
+                        </label>
+
+
+                        <label class="condition warning-option">
+                            <input
+                                type="radio"
+                                name="kondisi"
+                                value="Rusak Ringan">
+
+                            <span>!</span>
+
+                            <div>
+                                <strong>Rusak Ringan</strong>
+                                <small>Perlu perbaikan</small>
+                            </div>
+                        </label>
+
+
+                        <label class="condition danger-option">
+                            <input
+                                type="radio"
+                                name="kondisi"
+                                value="Rusak Berat">
+
+                            <span>×</span>
+
+                            <div>
+                                <strong>Rusak Berat</strong>
+                                <small>Perlu diganti</small>
+                            </div>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="resetForm()">
+                        Reset
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+                        💾 <span id="submitText">Simpan Data</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- INVENTORY -->
+    <section id="inventory" class="page">
+
+        <div class="page-title">
+
+            <div>
+                <h1>Daftar Inventaris</h1>
+                <p>Kelola semua data barang.</p>
+            </div>
+
+            <button
+                class="primary-btn"
+                onclick="showPage('form')">
+                + Tambah Barang
+            </button>
+
+        </div>
+
+
+        <div class="toolbar">
+
+            <div class="search-box">
+                🔍
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari nama atau kode inventaris..."
+                    oninput="renderInventory()">
+            </div>
+
+
+            <select id="filterRoom" onchange="renderInventory()">
+                <option value="">Semua Ruangan</option>
+            </select>
+
+
+            <select id="filterCondition" onchange="renderInventory()">
+
+                <option value="">Semua Kondisi</option>
+
+                <option value="Baik">Baik</option>
+
+                <option value="Rusak Ringan">
+                    Rusak Ringan
+                </option>
+
+                <option value="Rusak Berat">
+                    Rusak Berat
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div id="inventoryCards" class="inventory-grid"></div>
+
+    </section>
+
+
+    <!-- BACKUP -->
+    <section id="backup" class="page">
+
+        <div class="page-title">
+
+            <div>
+                <h1>Backup & Restore</h1>
+                <p>Simpan atau pulihkan data inventaris.</p>
+            </div>
+
+        </div>
+
+
+        <div class="backup-grid">
+
+            <div class="backup-card">
+                <div class="backup-icon">📤</div>
+
+                <h2>Export Data</h2>
+
+                <p>
+                    Simpan seluruh data inventaris
+                    ke dalam file JSON.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="exportData()">
+                    📄 Export Data
+                </button>
+
+            </div>
+
+
+            <div class="backup-card">
+
+                <div class="backup-icon">📥</div>
+
+                <h2>Import Data</h2>
+
+                <p>
+                    Pulihkan data inventaris dari
+                    file backup JSON.
+                </p>
+
+                <input
+                    type="file"
+                    id="importFile"
+                    accept=".json">
+
+                <button
+                    class="primary-btn"
+                    onclick="importData()">
+                    📥 Import Data
+                </button>
+
+            </div>
+
+
+            <div class="backup-card danger-backup">
+
+                <div class="backup-icon">🗑️</div>
+
+                <h2>Hapus Semua Data</h2>
+
+                <p>
+                    Menghapus seluruh data inventaris
+                    dari LocalStorage.
+                </p>
+
+                <button
+                    class="danger-btn"
+                    onclick="deleteAllData()">
+                    Hapus Semua
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- MOBILE NAVIGATION -->
+<nav class="mobile-nav">
+
+    <button onclick="showPage('dashboard')">
+        🏠
+        <span>Beranda</span>
+    </button>
+
+    <button onclick="showPage('form')">
+        ➕
+        <span>Tambah</span>
+    </button>
+
+    <button onclick="showPage('inventory')">
+        📋
+        <span>Daftar</span>
+    </button>
+
+    <button onclick="showPage('backup')">
+        ⋮
+        <span>Lainnya</span>
+    </button>
+
+</nav>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

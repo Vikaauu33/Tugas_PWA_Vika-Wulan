@@ -1,0 +1,335 @@
+[
+  {
+    "id": "1788223780027",
+    "nama": "Meja Siswa",
+    "kode": "INV-001",
+    "ruangan": "Lab Komputer",
+    "jumlah": 42,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 07.49.40"
+  },
+  {
+    "id": "1788223829234",
+    "nama": "Kursi Siswa",
+    "kode": "INV-002",
+    "ruangan": "Lab Komputer",
+    "jumlah": 40,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 07.50.29"
+  },
+  {
+    "id": "1788223866058",
+    "nama": "Kursi Siswa",
+    "kode": "INV-003",
+    "ruangan": "Lab Komputer",
+    "jumlah": 2,
+    "kondisi": "Rusak Ringan",
+    "createdAt": "1/9/2026, 07.51.06"
+  },
+  {
+    "id": "1788223944002",
+    "nama": "Meja Guru",
+    "kode": "INV-004",
+    "ruangan": "Lab Komputer",
+    "jumlah": 1,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 07.52.24"
+  },
+  {
+    "id": "1788224549667",
+    "nama": "Kursi Guru",
+    "kode": "INV-005",
+    "ruangan": "Lab Komputer",
+    "jumlah": 1,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.02.29"
+  },
+  {
+    "id": "1788224614074",
+    "nama": "Proyektor",
+    "kode": "INV-006",
+    "ruangan": "Lab Komputer",
+    "jumlah": 1,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.03.34"
+  },
+  {
+    "id": "1788224645266",
+    "nama": "AC",
+    "kode": "INV-007",
+    "ruangan": "Lab Komputer",
+    "jumlah": 3,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.04.05"
+  },
+  {
+    "id": "1788224722233",
+    "nama": "Lampu Led",
+    "kode": "INV-008",
+    "ruangan": "Lab Komputer",
+    "jumlah": 12,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.05.22"
+  },
+  {
+    "id": "1788224755970",
+    "nama": "Lampu Led",
+    "kode": "INV-009",
+    "ruangan": "Lab Komputer",
+    "jumlah": 6,
+    "kondisi": "Rusak Berat",
+    "createdAt": "1/9/2026, 08.05.55"
+  },
+  {
+    "id": "1788224790178",
+    "nama": "Lemari",
+    "kode": "INV-010",
+    "ruangan": "Lab Komputer",
+    "jumlah": 1,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.06.30"
+  },
+  {
+    "id": "1788224823754",
+    "nama": "Speaker",
+    "kode": "INV-011",
+    "ruangan": "Lab Komputer",
+    "jumlah": 3,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.07.03"
+  },
+  {
+    "id": "1788225060737",
+    "nama": "Rak Penyimpanan Tas",
+    "kode": "INV-012",
+    "ruangan": "Lab Komputer",
+    "jumlah": 2,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.11.00"
+  },
+  {
+    "id": "1788225109713",
+    "nama": "Meja Siswa",
+    "kode": "INV-013",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 36,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.11.49"
+  },
+  {
+    "id": "1788225164329",
+    "nama": "Meja Siswa",
+    "kode": "INV-014",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 6,
+    "kondisi": "Rusak Berat",
+    "createdAt": "1/9/2026, 08.12.44"
+  },
+  {
+    "id": "1788225198681",
+    "nama": "Kipas Angin",
+    "kode": "INV-015",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 4,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.13.18"
+  },
+  {
+    "id": "1788225232761",
+    "nama": "Kursi Siswa",
+    "kode": "INV-016",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 42,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.13.52"
+  },
+  {
+    "id": "1788225279753",
+    "nama": "Meja Guru",
+    "kode": "INV-017",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 1,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.14.39"
+  },
+  {
+    "id": "1788225431145",
+    "nama": "Papan Tulis",
+    "kode": "INV-018",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 1,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.17.11"
+  },
+  {
+    "id": "1788225478297",
+    "nama": "Sapu",
+    "kode": "INV-019",
+    "ruangan": "Ruang Kelas",
+    "jumlah": 5,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.17.58"
+  },
+  {
+    "id": "1788225521553",
+    "nama": "Jam dinding",
+    "kode": "INV-020",
+    "ruangan": "Ruang TU",
+    "jumlah": 2,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.18.41"
+  },
+  {
+    "id": "1788225566681",
+    "nama": "Meja Staf TU",
+    "kode": "INV-021",
+    "ruangan": "Ruang TU",
+    "jumlah": 6,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.19.26"
+  },
+  {
+    "id": "1788225606889",
+    "nama": "Kursi Staf TU",
+    "kode": "INV-022",
+    "ruangan": "Ruang TU",
+    "jumlah": 6,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.20.06"
+  },
+  {
+    "id": "1788225650001",
+    "nama": "Komputer Staf",
+    "kode": "INV-023",
+    "ruangan": "Ruang TU",
+    "jumlah": 6,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.20.50"
+  },
+  {
+    "id": "1788225971416",
+    "nama": "Komputer Siswa",
+    "kode": "INV-024",
+    "ruangan": "Lab Komputer",
+    "jumlah": 42,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.26.11"
+  },
+  {
+    "id": "1788226030504",
+    "nama": "Meja Perpustakaan",
+    "kode": "INV-025",
+    "ruangan": "Perpustakaan",
+    "jumlah": 10,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.27.10"
+  },
+  {
+    "id": "1788226061416",
+    "nama": "Kursi Perpustakaan",
+    "kode": "INV-026",
+    "ruangan": "Perpustakaan",
+    "jumlah": 10,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.27.41"
+  },
+  {
+    "id": "1788226122880",
+    "nama": "Komputer Siswa Dan Staf Perpustakaan",
+    "kode": "INV-027",
+    "ruangan": "Perpustakaan",
+    "jumlah": 4,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.28.42"
+  },
+  {
+    "id": "1788226155216",
+    "nama": "Rak Buku",
+    "kode": "INV-028",
+    "ruangan": "Perpustakaan",
+    "jumlah": 12,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.29.15"
+  },
+  {
+    "id": "1788226203817",
+    "nama": "Buku Materi",
+    "kode": "INV-029",
+    "ruangan": "Perpustakaan",
+    "jumlah": 300,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.30.03"
+  },
+  {
+    "id": "1788226234824",
+    "nama": "Buku Novel",
+    "kode": "INV-030",
+    "ruangan": "Perpustakaan",
+    "jumlah": 200,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.30.34"
+  },
+  {
+    "id": "1788226280456",
+    "nama": "Buku Agama",
+    "kode": "INV-031",
+    "ruangan": "Perpustakaan",
+    "jumlah": 50,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.31.20"
+  },
+  {
+    "id": "1788226330120",
+    "nama": "Meja Ruang Guru",
+    "kode": "INV-032",
+    "ruangan": "Ruang Guru",
+    "jumlah": 45,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.32.10"
+  },
+  {
+    "id": "1788226387744",
+    "nama": "Kursi Ruang Guru",
+    "kode": "INV-033",
+    "ruangan": "Ruang Guru",
+    "jumlah": 45,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.33.07"
+  },
+  {
+    "id": "1788226449112",
+    "nama": "Proyektor",
+    "kode": "INV-034",
+    "ruangan": "Ruang Guru",
+    "jumlah": 2,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.34.09"
+  },
+  {
+    "id": "1788226477104",
+    "nama": "AC",
+    "kode": "INV-035",
+    "ruangan": "Ruang Guru",
+    "jumlah": 5,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.34.37"
+  },
+  {
+    "id": "1788226524657",
+    "nama": "Rak Kunci Kelas",
+    "kode": "INV-036",
+    "ruangan": "Ruang Guru",
+    "jumlah": 2,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.35.24"
+  },
+  {
+    "id": "1788226569288",
+    "nama": "Lemari Penyimpanan",
+    "kode": "INV-037",
+    "ruangan": "Ruang Guru",
+    "jumlah": 3,
+    "kondisi": "Baik",
+    "createdAt": "1/9/2026, 08.36.09"
+  }
+]
